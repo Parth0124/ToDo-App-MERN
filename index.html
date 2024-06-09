@@ -6,10 +6,23 @@
     <title>ToDo App</title>
 </head>
 <script>
-    function onPress()
-    {
-        alert("Hi")
-    }
+        function parsedResponse(data)
+        {
+            console.log(data);
+        }
+
+        function callBack(response)
+        {
+            response.json.then(parsedResponse)
+        };
+
+        function onPress()
+        {
+
+            fetch("http://localhost:3000/todos", {
+                method: "GET"
+            }).then(callBack);
+        }
 </script>
 <body>
     Todo Title
