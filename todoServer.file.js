@@ -37,9 +37,9 @@ app.post('/todos', function(req, res) {
 
   fs.readFile("todos.json", "utf8", (err, data) => {
     if (err) throw err;
-    const todos = JSON.parse(data);
+    const todos = JSON.parse(data);  //json.parse converts strings to object
     todos.push(newTodo);
-    fs.writeFile("todos.json", JSON.stringify(todos), (err) => {
+    fs.writeFile("todos.json", JSON.stringify(todos), (err) => {  //converts object back to string by stringify
       if (err) throw err;
       res.status(201).json(newTodo);
     });
