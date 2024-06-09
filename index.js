@@ -22,7 +22,7 @@
   });
   
   app.delete('/todos/:id', (req, res) => {
-    const todoIndex = todos.findIndex(t => t.id === parseInt(req.params.id));
+    const todoIndex = todos.findIndex(t => t.id === parseInt(req.params.id));  //find index when given an array and the id of the todo, searches through the array and when finds the particular id, gives back the index.
     if (todoIndex === -1) {
       res.status(404).send();
     } else {
