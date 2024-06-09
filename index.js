@@ -1,10 +1,12 @@
   const express = require('express');
   const bodyParser = require('body-parser');
   const path = require("path")
+  const cors = require("cors") //second way is to install cors and basically telling the browser to accept the request from everywhere.
   
   const app = express();
   
   app.use(bodyParser.json());
+  app.use(cors());
   
   let todos = [];
   
@@ -32,9 +34,10 @@
     }
   });
 
-  app.get("/", (req,res) => {
-    res.sendFile(path.join(__dirname, "index.html"));
-  })
+  //one way to get rid of cors is to by the following code by sending the html through the index.js
+  // app.get("/", (req,res) => {
+  //   res.sendFile(path.join(__dirname, "index.html"));
+  // })
 
   
   // for all other routes, return 404
