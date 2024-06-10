@@ -11,7 +11,13 @@
         {
             console.log(data);
             var parentElement = document.getElementById("mainArea");
-            parentElement.innerHTML = JSON.stringify(data);
+            // parentElement.innerHTML = JSON.stringify(data);
+            for (var i=0; i<data.length; i++)
+            {
+                var chidlELement =document.createElement("div");
+                chidlELement.innerHTML = data[i].title;
+                parentElement.appendChild(chidlELement);
+            }
         }
 
         function getDataCallback(response)
