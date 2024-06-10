@@ -12,17 +12,19 @@
             console.log(data);
         }
 
-        function callBack2(response)
+        function getDataCallback(response)
         {
-            response.json(todosCallback);
+            response.json.then(todosCallback);
         }
 
         function getData()
         {
             fetch("http://localhost:3000/todos", {
                 method: "GET",
-            }).then(callBack2)
+            }).then(getDataCallback)
         }
+
+        getData();
 
         function parsedResponse(data)
         {
