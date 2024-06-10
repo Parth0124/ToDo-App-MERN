@@ -18,7 +18,7 @@
 
         function onPress()
         {
-            var title = document.getElementById("title").value;
+            var title = document.getElementById("title").value;  //records the value of the title and description given by the user instead of hardcoding it anymore.
             var description = document.getElementById("description").value
 
             fetch("http://localhost:3000/todos", {
