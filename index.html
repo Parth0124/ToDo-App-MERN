@@ -14,7 +14,7 @@
 
         function getDataCallback(response)
         {
-            response.json.then(todosCallback);
+            response.json().then(todosCallback);
         }
 
         function getData()
