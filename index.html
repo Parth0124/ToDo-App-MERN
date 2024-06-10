@@ -10,6 +10,8 @@
         function todosCallback(data)
         {
             console.log(data);
+            var parentElement = document.getElementById("mainArea");
+            parentElement.innerHTML = JSON.stringify(data);
         }
 
         function getDataCallback(response)
@@ -61,5 +63,8 @@
     <input type="text" id="description"></input>
     <br><br>
     <button onclick="onPress()">Send Todo</button>
+    <div id="mainArea">
+        
+    </div>
 </body>
 </html>
