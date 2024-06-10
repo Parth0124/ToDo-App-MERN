@@ -20,7 +20,14 @@
         {
 
             fetch("http://localhost:3000/todos", {
-                method: "GET"
+                method: "POST",
+                body: {
+                    title: "Gym",
+                    description: "Hit the gym at 6:00 pm"
+                },
+                headers: {
+                    "Content-Type": "application/json"
+                }
             }).then(callBack);
         }
 </script>
