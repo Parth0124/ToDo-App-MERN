@@ -6,6 +6,24 @@
     <title>ToDo App</title>
 </head>
 <script>
+
+        function todosCallback(data)
+        {
+            console.log(data);
+        }
+
+        function callBack2(response)
+        {
+            response.json(todosCallback);
+        }
+
+        function getData()
+        {
+            fetch("http://localhost:3000/todos", {
+                method: "GET",
+            }).then(callBack2)
+        }
+
         function parsedResponse(data)
         {
             console.log(data);
