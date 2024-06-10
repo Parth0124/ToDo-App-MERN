@@ -39,7 +39,7 @@ app.post('/todos', function(req, res) {
     if (err) throw err;
     const todos = JSON.parse(data);  //json.parse converts strings to object
     todos.push(newTodo);
-    fs.writeFile("todos.json", JSON.stringify(todos), (err) => {  //converts object back to string by stringify
+    fs.writeFile("todos.json", JSON.stringify(todos), (err) => {  //converts object back to string by
       if (err) throw err;
       res.status(201).json(newTodo);
     });
